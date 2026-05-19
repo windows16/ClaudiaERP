@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_compras"
+              name="Compras"
+              sequence="30"/>
+    <menuitem id="menu_compras_compras"
+              name="Compras"
+              parent="menu_compras"
+              action="action_compras"
+              sequence="10"/>
+    <menuitem id="menu_compras_proveedores"
+              name="Proveedores"
+              parent="menu_compras"
+              action="action_proveedores"
+              sequence="20"/>
+</odoo>

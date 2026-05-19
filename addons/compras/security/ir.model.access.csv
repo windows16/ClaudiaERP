@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iv_proveedor,access_iv_proveedor,model_iv_proveedor,,1,1,1,1
+access_iv_compra,access_iv_compra,model_iv_compra,,1,1,1,1
+access_iv_detalle_compra,access_iv_detalle_compra,model_iv_detalle_compra,,1,1,1,1

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ventas"
+              name="Ventas"
+              sequence="20"/>
+    <menuitem id="menu_ventas_ventas"
+              name="Ventas"
+              parent="menu_ventas"
+              action="action_ventas"
+              sequence="10"/>
+    <menuitem id="menu_ventas_clientes"
+              name="Clientes"
+              parent="menu_ventas"
+              action="action_clientes"
+              sequence="20"/>
+</odoo>

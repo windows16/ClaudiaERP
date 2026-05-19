@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_inventario"
+              name="Inventario"
+              sequence="10"/>
+    <menuitem id="menu_inventario_productos"
+              name="Productos"
+              parent="menu_inventario"
+              action="action_productos"
+              sequence="10"/>
+    <menuitem id="menu_inventario_categorias"
+              name="Categorías"
+              parent="menu_inventario"
+              action="action_categorias"
+              sequence="20"/>
+    <menuitem id="menu_inventario_movimientos"
+              name="Movimientos"
+              parent="menu_inventario"
+              action="action_movimientos"
+              sequence="30"/>
+</odoo>
