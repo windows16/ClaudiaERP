@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_compra_tree" model="ir.ui.view">
+        <field name="name">iv.compra.tree</field>
+        <field name="model">iv.compra</field>
+        <field name="arch" type="xml">
+            <tree string="Compras" decoration-success="estado == 'recibida'" decoration-muted="estado == 'cancelada'">
+                <field name="name"/>
+                <field name="fecha"/>
+                <field name="proveedor_id"/>
+                <field name="total"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_compra_form" model="ir.ui.view">
+        <field name="name">iv.compra.form</field>
+        <field name="model">iv.compra</field>
+        <field name="arch" type="xml">
+            <form string="Compra">
+                <header>
+                    <button name="action_recibir" string="Recibir" type="object"
+                            class="btn-primary" invisible="estado != 'borrador'"/>
+                    <button name="action_cancelar" string="Cancelar" type="object"
+                            invisible="estado == 'cancelada'"/>
+                    <field name="estado" widget="statusbar" statusbar_visible="borrador,recibida,cancelada"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="proveedor_id"/>
+                        </group>
+                        <group>
+                            <field name="fecha"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Productos">
+                            <field name="detalle_ids">
+                                <tree editable="bottom">
+                                    <field name="producto_id"/>
+                                    <field name="cantidad"/>
+                                    <field name="costo_unitario"/>
+                                    <field name="subtotal" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group class="oe_subtotal_footer">
+                        <field name="total" class="oe_subtotal_footer_separator"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_compras" model="ir.actions.act_window">
+        <field name="name">Compras</field>
+        <field name="res_model">iv.compra</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_producto_tree" model="ir.ui.view">
+        <field name="name">iv.producto.tree</field>
+        <field name="model">iv.producto</field>
+        <field name="arch" type="xml">
+            <tree string="Productos" decoration-danger="bajo_stock == True">
+                <field name="codigo"/>
+                <field name="nombre"/>
+                <field name="categoria_id"/>
+                <field name="proveedor_id"/>
+                <field name="precio_compra"/>
+                <field name="precio_venta"/>
+                <field name="stock"/>
+                <field name="stock_minimo"/>
+                <field name="bajo_stock" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_producto_form" model="ir.ui.view">
+        <field name="name">iv.producto.form</field>
+        <field name="model">iv.producto</field>
+        <field name="arch" type="xml">
+            <form string="Producto">
+                <sheet>
+                    <widget name="web_ribbon" title="Bajo Stock" bg_color="bg-danger" invisible="not bajo_stock"/>
+                    <group>
+                        <group string="Información General">
+                            <field name="codigo"/>
+                            <field name="nombre"/>
+                            <field name="categoria_id"/>
+                            <field name="proveedor_id"/>
+                            <field name="descripcion"/>
+                        </group>
+                        <group string="Precios y Stock">
+                            <field name="precio_compra"/>
+                            <field name="precio_venta"/>
+                            <field name="stock"/>
+                            <field name="stock_minimo"/>
+                            <field name="bajo_stock" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_productos" model="ir.actions.act_window">
+        <field name="name">Productos</field>
+        <field name="res_model">iv.producto</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

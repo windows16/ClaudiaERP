@@ -1,0 +1,23 @@
+{
+    'name': 'Inventario y Ventas',
+    'version': '17.0.1.0.0',
+    'category': 'Inventory',
+    'summary': 'Gestión de inventario, ventas, compras y clientes',
+    'description': 'Módulo completo para gestión comercial: clientes, proveedores, productos, ventas, compras y movimientos de inventario.',
+    'author': 'Custom',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/clientes_views.xml',
+        'views/proveedores_views.xml',
+        'views/categorias_views.xml',
+        'views/productos_views.xml',
+        'views/ventas_views.xml',
+        'views/compras_views.xml',
+        'views/movimientos_views.xml',
+        'views/menu_views.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

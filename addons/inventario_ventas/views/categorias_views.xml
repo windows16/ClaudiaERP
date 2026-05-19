@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_categoria_tree" model="ir.ui.view">
+        <field name="name">iv.categoria.tree</field>
+        <field name="model">iv.categoria</field>
+        <field name="arch" type="xml">
+            <tree string="Categorías">
+                <field name="nombre"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_categoria_form" model="ir.ui.view">
+        <field name="name">iv.categoria.form</field>
+        <field name="model">iv.categoria</field>
+        <field name="arch" type="xml">
+            <form string="Categoría">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Productos">
+                            <field name="producto_ids">
+                                <tree>
+                                    <field name="codigo"/>
+                                    <field name="nombre"/>
+                                    <field name="stock"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_categorias" model="ir.actions.act_window">
+        <field name="name">Categorías</field>
+        <field name="res_model">iv.categoria</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

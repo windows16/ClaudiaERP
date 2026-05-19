@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_movimiento_tree" model="ir.ui.view">
+        <field name="name">iv.movimiento.inventario.tree</field>
+        <field name="model">iv.movimiento.inventario</field>
+        <field name="arch" type="xml">
+            <tree string="Movimientos" decoration-success="tipo_movimiento == 'entrada'" decoration-danger="tipo_movimiento == 'salida'">
+                <field name="fecha"/>
+                <field name="producto_id"/>
+                <field name="tipo_movimiento"/>
+                <field name="cantidad"/>
+                <field name="referencia"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_movimiento_form" model="ir.ui.view">
+        <field name="name">iv.movimiento.inventario.form</field>
+        <field name="model">iv.movimiento.inventario</field>
+        <field name="arch" type="xml">
+            <form string="Movimiento de Inventario">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="producto_id"/>
+                            <field name="tipo_movimiento"/>
+                        </group>
+                        <group>
+                            <field name="cantidad"/>
+                            <field name="fecha"/>
+                            <field name="referencia"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_movimientos" model="ir.actions.act_window">
+        <field name="name">Movimientos de Inventario</field>
+        <field name="res_model">iv.movimiento.inventario</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

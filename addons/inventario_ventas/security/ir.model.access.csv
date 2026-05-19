@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iv_cliente,access_iv_cliente,model_iv_cliente,,1,1,1,1
+access_iv_proveedor,access_iv_proveedor,model_iv_proveedor,,1,1,1,1
+access_iv_categoria,access_iv_categoria,model_iv_categoria,,1,1,1,1
+access_iv_producto,access_iv_producto,model_iv_producto,,1,1,1,1
+access_iv_venta,access_iv_venta,model_iv_venta,,1,1,1,1
+access_iv_detalle_venta,access_iv_detalle_venta,model_iv_detalle_venta,,1,1,1,1
+access_iv_compra,access_iv_compra,model_iv_compra,,1,1,1,1
+access_iv_detalle_compra,access_iv_detalle_compra,model_iv_detalle_compra,,1,1,1,1
+access_iv_movimiento_inventario,access_iv_movimiento_inventario,model_iv_movimiento_inventario,,1,1,1,1
